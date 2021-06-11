@@ -24,7 +24,8 @@ class UsersController < ApplicationController
   def login
     email = params[:email]
     password = params[:password]
-    user = User.find(:email)
+    id = User.find_by(email: email).id
+    user = User.find(id)
     render plain: password == user.password
   end
 end
