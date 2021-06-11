@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    render plain: User.order("name").map { |user| user.to_pleasant_string }
+    render plain: User.order("id").map { |user| user.to_pleasant_string }
   end
 
   def show
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   def login
     email = params[:email]
     password = params[:password]
-    user = User.find_by!(email: email)
+    user = User.find(:email)
     render plain: password == user.password
   end
 end
