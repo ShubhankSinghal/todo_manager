@@ -105,6 +105,10 @@ body {
   letter-spacing: 0.1px;
 }
 
+.TodoItem-completed {
+  text-decoration: line-through;
+}
+
 .TodoItem-remainingDate {
   font-size: 13px;
   color: #726a7e;
