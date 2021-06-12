@@ -10,99 +10,22 @@
       <input type="button" class="AddTodo-button" value="Add">
     </section>
 
-    <section class="TodoSection">
-      <div class="TodoSectionTitle">
-        <p class="TodoSectionTitle-text">Due Today</p>
-        <p class="TodoSectionTitle-remainingCount">0/2</p>
-      </div>
-      <ul>
-        <li class="TodoItem">
-          <label class="TodoItem-container">
-            <input type="checkbox" class="TodoItem-checkbox">
-            <p class="TodoItem-text">Submit SaaS 201 project</p>
-            <p class="TodoItem-overdueLabel">Overdue</p>
-            <a class="TodoItem-delete" href="javascript:void(0)">
-              <img src="delete.png">
-            </a>
-          </label>
-        </li>
-        <li class="TodoItem">
-          <label class="TodoItem-container">
-            <input type="checkbox" class="TodoItem-checkbox">
-            <p class="TodoItem-text">Call accountant</p>
-            <a class="TodoItem-delete" href="javascript:void(0)">
-              <img src="delete.png">
-            </a>
-          </label>
-        </li>
-      </ul>
-    </section>
+    <%= render partial: "todo-section", locals: {
+                 section_title: "Overdue",
+                 todos: Todo.overdue,
+                 show_due_date: true,
+               } %>
+    <%= render partial: "todo-section", locals: {
+                 section_title: "Due Today",
+                 todos: Todo.due_today,
+                 show_due_date: false,
+               } %>
+    <%= render partial: "todo-section", locals: {
+                 section_title: "Due Later",
+                 todos: Todo.due_later,
+                 show_due_date: true,
+               } %>
 
-    <section class="TodoSection">
-      <div class="TodoSectionTitle">
-        <p class="TodoSectionTitle-text">Due Tomorrow</p>
-        <p class="TodoSectionTitle-remainingCount">0/1</p>
-      </div>
-      <ul>
-        <li class="TodoItem">
-          <label class="TodoItem-container">
-            <input type="checkbox" class="TodoItem-checkbox">
-            <p class="TodoItem-text">Refill groceries</p>
-            <a class="TodoItem-delete" href="javascript:void(0)">
-              <img src="delete.png">
-            </a>
-          </label>
-        </li>
-      </ul>
-    </section>
 
-    <section class="TodoSection">
-      <div class="TodoSectionTitle">
-        <p class="TodoSectionTitle-text">Remaining</p>
-        <p class="TodoSectionTitle-remainingCount">0/4</p>
-      </div>
-      <ul>
-        <li class="TodoItem">
-          <label class="TodoItem-container">
-            <input type="checkbox" class="TodoItem-checkbox">
-            <p class="TodoItem-text">Task1</p>
-            <p class="TodoItem-remainingDate">Jan 21</p>
-            <a class="TodoItem-delete" href="javascript:void(0)">
-              <img src="delete.png">
-            </a>
-          </label>
-        </li>
-        <li class="TodoItem">
-          <label class="TodoItem-container">
-            <input type="checkbox" class="TodoItem-checkbox">
-            <p class="TodoItem-text">Task2</p>
-            <p class="TodoItem-remainingDate">Jan 22</p>
-            <a class="TodoItem-delete" href="javascript:void(0)">
-              <img src="delete.png">
-            </a>
-          </label>
-        </li>
-        <li class="TodoItem">
-          <label class="TodoItem-container">
-            <input type="checkbox" class="TodoItem-checkbox">
-            <p class="TodoItem-text">Task3</p>
-            <p class="TodoItem-remainingDate">Jan 23</p>
-            <a class="TodoItem-delete" href="javascript:void(0)">
-              <img src="delete.png">
-            </a>
-          </label>
-        </li>
-        <li class="TodoItem">
-          <label class="TodoItem-container">
-            <input type="checkbox" class="TodoItem-checkbox">
-            <p class="TodoItem-text">Task4</p>
-            <p class="TodoItem-remainingDate">Jan 24</p>
-            <a class="TodoItem-delete" href="javascript:void(0)">
-              <img src="delete.png">
-            </a>
-          </label>
-        </li>
-      </ul>
-    </section>
   </article>
 </main>

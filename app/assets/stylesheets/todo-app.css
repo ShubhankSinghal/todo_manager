@@ -105,14 +105,6 @@ body {
   letter-spacing: 0.1px;
 }
 
-.TodoItem-overdueLabel {
-  font-size: 13px;
-  color: #c53030;
-  letter-spacing: 0.09px;
-  margin-left: 8px;
-  display: inline;
-}
-
 .TodoItem-remainingDate {
   font-size: 13px;
   color: #726a7e;
