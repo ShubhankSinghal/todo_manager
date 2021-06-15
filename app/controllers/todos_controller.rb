@@ -25,10 +25,10 @@ class TodosController < ApplicationController
       user_id: current_user.id,
     )
     if new_todo.save
-      redirect_todos_path
+      redirect_to todos_path
     else
       flash[:error] = new_todo.errors.full_messages.join(", ")
-      redirect_todos_path
+      redirect_to todos_path
     end
   end
 
